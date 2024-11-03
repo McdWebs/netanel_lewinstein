@@ -18,23 +18,23 @@ const socialItems = [
   },
   {
     icon: <Instagram />,
-    link: "https://www.instagram.com/daniela_clinic?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
-    text: "daniela_clinic",
+    link: "https://www.instagram.com/myisraeliview?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
+    text: "my Israeli View",
   },
   {
     icon: <LocalPhone />,
-    link: "tel:054-345-0977",
-    text: "054-345-0977",
+    link: "tel:054-800-5704",
+    text: "054-800-5704",
   },
   {
     icon: <WhatsApp />,
-    link: "https://api.whatsapp.com/send?phone=972543450977&text=אני+מעונינת+לקבוע+תור+",
-    text: "054-345-0977",
+    link: "https://api.whatsapp.com/send?phone=972548005704&text=אני+מעוניין+בצלם++",
+    text: "054-800-5704",
   },
   {
     icon: <Mail />,
-    link: "mailto:Danielaelish@gmail.com",
-    text: "Danielaelish@gmail.com",
+    link: "mailto:michaelhalperin2@gmail.com",
+    text: "michaelhalperin2@gmail.com",
   },
 ];
 
@@ -44,7 +44,7 @@ const SocialNetworks = () => {
       <List className={styles.iconContainer}>
         {socialItems.map((item, index) => (
           <ListItem className={styles.iconItem} key={index}>
-            <ListItemIcon sx={{ color: "#BA605D" }}>{item.icon}</ListItemIcon>
+            <ListItemIcon sx={{ color: "rgb(93, 136, 186)" }}>{item.icon}</ListItemIcon>
             <ListItemText>
               <a href={item.link} className={styles.link}>
                 {item.text}
@@ -59,7 +59,7 @@ const SocialNetworks = () => {
       <Link to="/" className={styles.link}>
         <button className={styles.button}>
           <p className={styles.footerText}>
-            All Rights reserved © 2024 Showroom By daniela clinic -
+            All Rights reserved © 2024 Showroom By Netanel Photography -
             <strong>Created by McdWebs</strong>
           </p>
         </button>

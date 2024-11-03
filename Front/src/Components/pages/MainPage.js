@@ -2,16 +2,16 @@ import React from "react";
 import CarouselImages from "../helpers/CarouselImages";
 import SocialNetworks from "../helpers/SocialNetworks";
 import AccessibilityMenu from "../helpers/AccessibilityMenu";
-import TimeSelection from "../helpers/TimeSelection";
 import FeedbackList from "./FeedbackList";
 import Works from "./Works";
+import Collections from "./Collections";
 
 const MainPage = () => {
   return (
     <div>
       <AccessibilityMenu />
       <CarouselImages />
-      <TimeSelection />
+      <Collections />
       <Works />
       <FeedbackList />
       <SocialNetworks />

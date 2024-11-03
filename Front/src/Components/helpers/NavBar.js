@@ -49,7 +49,7 @@ const NavBar = () => {
             fontSize: "28px",
           }}
         >
-          Daniela Clinic
+          Netanel Photography
         </Link>
         <DrawerNavBAr />
       </div>

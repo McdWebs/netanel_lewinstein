@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { DRESSLIST } from "../../consts/SubjectsList";
+import { IMAGELIST } from "../../consts/SubjectsList";
 import DialogForImage from "../helpers/Dialog";
 import styles from "../../styles/style.module.css";
 
@@ -19,7 +19,7 @@ const Works = () => {
       <p className={styles.title}>✨ העבודות שלי</p>
       <div className={styles.shopContainer}>
         <div className={styles.cardContainer}>
-          {DRESSLIST.map((product) => (
+          {IMAGELIST.map((product) => (
             <div
               key={product.id}
               className={styles.card}

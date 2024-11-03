@@ -3,7 +3,6 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../../styles/style.module.css";
 
-// import image1 from "../../assets/images/new-logo.png";
 import image2 from "../../assets/images/nail-head-1.png";
 import image3 from "../../assets/images/nail-head-2.jpg";
 import image4 from "../../assets/images/nail-head-3.jpg";

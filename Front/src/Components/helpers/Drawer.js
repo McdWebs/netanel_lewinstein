@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useState } from "react";
 import {
   Box,
   Drawer,
@@ -17,14 +17,10 @@ import {
   Info,
   Phone,
   Feedback,
-  Login,
-  AdminPanelSettings,
 } from "@mui/icons-material";
 import { Link } from "react-router-dom";
-import { AuthContext } from "../helpers/AuthContext";
 
 const DrawerNavBar = () => {
-  const { isAuthenticated } = useContext(AuthContext);
   const [state, setState] = useState({
     right: false,
   });
@@ -48,16 +44,6 @@ const DrawerNavBar = () => {
     { text: "לפרגן", link: "/feedback", icon: <Feedback /> },
   ];
 
-  if (isAuthenticated) {
-    menuItems.push({
-      text: "Admin",
-      link: "/admin",
-      icon: <AdminPanelSettings />,
-    });
-  } else {
-    menuItems.push({ text: "התחברות", link: "/auth", icon: <Login /> });
-  }
-
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
@@ -69,7 +55,7 @@ const DrawerNavBar = () => {
         {menuItems.map((item) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton component={Link} to={item.link} duration={500}>
-              <ListItemIcon sx={{ color: "#BA605D" }}>{item.icon}</ListItemIcon>
+              <ListItemIcon sx={{ color: "rgb(93, 136, 186)" }}>{item.icon}</ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
@@ -81,7 +67,7 @@ const DrawerNavBar = () => {
 
   return (
     <div>
-      <Button sx={{ color: "#BA605D" }} onClick={toggleDrawer("right", true)}>
+      <Button sx={{ color: "rgb(93, 136, 186)" }} onClick={toggleDrawer("right", true)}>
         <ViewHeadline />
       </Button>
       <Drawer

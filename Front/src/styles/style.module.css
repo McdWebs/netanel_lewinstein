@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'StyleScript';
-  src: url('../assets/fonts/StyleScript-Regular.ttf') format('truetype');
+  font-family: "StyleScript";
+  src: url("../assets/fonts/Tinos-BoldItalic.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
@@ -92,7 +92,7 @@
   text-decoration: none;
   font-size: 14px;
   padding: 10px 20px;
-  background-color: #BA605D;
+  background-color: rgb(93, 136, 186);
   color: white;
   border-radius: 5px;
   text-align: center;
@@ -602,22 +602,53 @@
   font-weight: bold;
 }
 
-/* ZZ */
-.authContainer {
-  max-width: 400px;
-  margin: 40px auto;
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+/* collections */
+.carouselContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  background-color: #1a1a1a;
+  position: relative;
 }
 
-.authButton {
-  margin-top: 20px !important;
+.rotatingCarousel {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  animation: rotate 45s linear infinite;
 }
 
-.authMessage {
-  margin-top: 20px;
+.carouselItem {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg))
+    translate(220px);
+}
+
+.carouselImage {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #fff;
+  transform: rotate(calc(-1 * var(--i) * 45deg));
+}
+
+.legend {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 5px;
   text-align: center;
   font-weight: bold;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseurl = "https://daniela-clinic.onrender.com/users";
+// const baseurl = "https://daniela-clinic.onrender.com/users";
+const baseurl = "http://localhost:3005/users";
 
 export const getUsers = async () => await axios.get(baseurl);
 

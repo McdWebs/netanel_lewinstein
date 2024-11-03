@@ -1,6 +1,7 @@
 import axios from "axios";
 
-const baseurl = "https://daniela-clinic.onrender.com/feedbacks";
+// const baseurl = "https://daniela-clinic.onrender.com/feedbacks";
+const baseurl = "http://localhost:3005/feedbacks";
 
 export const getFeedback = async () => await axios.get(baseurl);
 

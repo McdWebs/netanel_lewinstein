@@ -10,50 +10,65 @@ import image9 from "../assets/images/nail-9.jpg";
 
 export const SUBJECTLIST = ["חצאית", "שמלה"];
 
-export const DRESSLIST = [
+export const IMAGELIST = [
   {
     id: 1,
-    subjects: "Fashion",
+    label: "חתונות",
     image: image1,
   },
   {
     id: 2,
-    subjects: "Fashion",
+    label: "אירוסין",
     image: image2,
   },
   {
     id: 3,
-    subjects: "Fashion",
+    label: "בר מצווה",
     image: image3,
   },
   {
     id: 4,
-    subjects: "Fashion",
+    label: "ברית מילה",
     image: image4,
   },
   {
     id: 5,
-    subjects: "Fashion",
+    label: "פתיחת עסק",
     image: image5,
   },
   {
     id: 6,
-    subjects: "Fashion",
+    label: "ימי הולדת",
     image: image6,
   },
   {
     id: 7,
-    subjects: "Fashion",
+    label: "אירועי צדקה",
     image: image7,
   },
   {
     id: 8,
-    subjects: "Fashion",
+    label: "הופעות",
     image: image8,
   },
-  {
-    id: 9,
-    subjects: "Fashion",
-    image: image9,
-  },
+  // {
+  //   id: 9,
+  //   label: "צילומי אופנה",
+  //   image: image9,
+  // },
+  // {
+  //   id: 10,
+  //   label: "תפאורה",
+  //   image: image9,
+  // },
+  // {
+  //   id: 11,
+  //   label: "נופים",
+  //   image: image9,
+  // },
+  // {
+  //   id: 12,
+  //   label: "נופים",
+  //   image: image9,
+  // },
 ];
