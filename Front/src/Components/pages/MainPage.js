@@ -11,7 +11,7 @@ const MainPage = () => {
     <div>
       <AccessibilityMenu />
       <CarouselImages />
-      <Collections />
+      {/* <Collections /> */}
       <Works />
       <FeedbackList />
       <SocialNetworks />
