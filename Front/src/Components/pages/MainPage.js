@@ -2,7 +2,7 @@ import React from "react";
 import CarouselImages from "../helpers/CarouselImages";
 import SocialNetworks from "../helpers/SocialNetworks";
 import AccessibilityMenu from "../helpers/AccessibilityMenu";
-import FeedbackList from "./FeedbackList";
+// import FeedbackList from "./FeedbackList";
 import Works from "./Works";
 import Collections from "./Collections";
 
@@ -11,9 +11,9 @@ const MainPage = () => {
     <div>
       <AccessibilityMenu />
       <CarouselImages />
-      {/* <Collections /> */}
+      <Collections />
       <Works />
-      <FeedbackList />
+      {/* <FeedbackList /> */}
       <SocialNetworks />
     </div>
   );

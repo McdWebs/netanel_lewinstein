@@ -43,7 +43,7 @@ const NavBar = () => {
           to="/"
           style={{
             textDecoration: "none",
-            color: "#BA605D",
+            color: "rgb(93, 136, 186)",
             paddingRight: "40px",
             fontFamily: "StyleScript",
             fontSize: "28px",

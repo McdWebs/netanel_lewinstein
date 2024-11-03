@@ -1,8 +1,15 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import styles from "../../styles/style.module.css";
 import { IMAGELIST } from "../../consts/SubjectsList";
 
 const CarouselComponent = () => {
+  const navigate = useNavigate();
+
+  const handleNavigate = (theme) => {
+    navigate(`/collections/${encodeURIComponent(theme)}`);
+  };
+
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.rotatingCarousel}>
@@ -11,6 +18,7 @@ const CarouselComponent = () => {
             key={index}
             className={styles.carouselItem}
             style={{ "--i": index }}
+            onClick={() => handleNavigate(image.label)}
           >
             <img
               src={image.image}

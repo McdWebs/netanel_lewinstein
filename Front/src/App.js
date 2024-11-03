@@ -12,6 +12,7 @@ import MainPage from "./Components/pages/MainPage";
 import NavBar from "./Components/helpers/NavBar";
 import PolicySupport from "./Components/pages/PolicySupport";
 import Feedback from "./Components/pages/Feedback";
+// import CollectionPage from "./Components/helpers/CollectionPage";
 
 const App = () => {
   return (
@@ -19,7 +20,7 @@ const App = () => {
         <NavBar />
         <Routes>
           <Route path="/" element={<MainPage />} />
-          <Route path="/works" element={<Works />} />
+          <Route path="/works:theme" element={<Works />} />
           <Route path="/PolicySupport" element={<PolicySupport />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

@@ -126,7 +126,7 @@ const MenuContainer = styled.div`
 `;
 
 const MenuButton = styled.button`
-  background-color: #ba605d;
+  background-color: rgb(93, 136, 186);
   color: white;
   border: none;
   border-radius: 50%;
@@ -138,10 +138,6 @@ const MenuButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-
-  &:hover {
-    background-color: #a34f4c;
-  }
 `;
 
 const MenuOptions = styled.div`
