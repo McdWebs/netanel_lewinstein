@@ -3,9 +3,9 @@ import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import styles from "../../styles/style.module.css";
 
-import image2 from "../../assets/images/nail-head-1.png";
-import image3 from "../../assets/images/nail-head-2.jpg";
-import image4 from "../../assets/images/nail-head-3.jpg";
+import image2 from "../../assets/images/photo-1.jpg";
+import image3 from "../../assets/images/photo-2.jpeg";
+import image4 from "../../assets/images/photo-3.jpg";
 
 const CarouselImages = () => {
   return (

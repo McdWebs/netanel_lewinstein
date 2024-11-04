@@ -11,7 +11,7 @@ const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-const DialogForImage = ({ open, onClose, product }) => {
+const DialogForImage = ({ open, onClose, image }) => {
   return (
     <Dialog
       open={open}
@@ -32,18 +32,21 @@ const DialogForImage = ({ open, onClose, product }) => {
         aria-label="close"
         onClick={onClose}
         sx={{
-          position: 'absolute',
+          position: "absolute",
           right: 8,
           top: 8,
-          color: 'red',
-          marginBottom: '20px',
+          color: "red",
+          marginBottom: "20px",
         }}
       >
         <CloseIcon />
       </IconButton>
-      <DialogTitle className={styles.dialogTitle}>{product.name}</DialogTitle>
       <DialogContent className={styles.dialogContent}>
-        <img src={product.image} alt={product.name} className={styles.imageDialog} />
+        <img
+          src={image.image}
+          alt={image.name}
+          className={styles.imageDialog}
+        />
       </DialogContent>
     </Dialog>
   );

@@ -4,7 +4,15 @@
   font-weight: normal;
   font-style: normal;
 }
-/* Shop.js */
+
+/* mainpage.js */
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+}
+
+/* works.js */
 .title {
   color: #007aff;
   font-size: 20px;
@@ -13,20 +21,21 @@
   font-weight: bold;
 }
 
-.shopContainer {
+.workContainer {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
 .cardContainer {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
 }
 
 .card {
+  position: relative;
+  cursor: pointer;
   width: 180px;
   border-radius: 8px;
   background-color: #fff;
@@ -35,21 +44,27 @@
   text-align: center;
 }
 
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
 .image {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.list {
-  list-style: none;
-  padding: 10px;
-  margin: 0;
-}
-
-.listItem {
-  font-size: 1rem;
-  margin-bottom: 10px;
+.labelOverlay {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-weight: bold;
 }
 
 /* SocialNetworks.js */
@@ -138,7 +153,6 @@
 }
 
 /* Contact.js */
-
 .titleContact {
   color: #333;
 }
@@ -203,147 +217,6 @@
   line-height: 1.8;
   color: #555;
   margin-bottom: 20px;
-}
-
-/* AccessibilityMenu.js */
-.menuContainer {
-  position: fixed;
-  top: 120px;
-  z-index: 1000;
-}
-
-.menuButton {
-  background-color: black;
-  color: white;
-  border: none;
-  border-radius: 0px 30px 30px 0px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-}
-
-.menuButton:hover {
-  background-color: #333;
-}
-
-.menuOptions {
-  margin-top: 10px;
-  background-color: #f1f1f1;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.menuOption {
-  display: flex;
-  align-items: center;
-  margin: 10px 0;
-  font-size: 16px;
-  cursor: pointer;
-}
-
-/* Dialog.js */
-.dialogTitle {
-  text-align: center;
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
-}
-
-.dialogContent {
-  padding: 10px;
-  overflow-y: auto;
-}
-
-.imageDialog {
-  width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.actions {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-}
-
-.closeButton {
-  background-color: #f44336;
-  color: white;
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin-right: 25px;
-  text-transform: none;
-}
-
-.contactLink {
-  text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.contactButton {
-  background-color: green;
-  color: white;
-  border-radius: 20px;
-  padding: 10px 20px;
-  margin: 0 20px 0 20px;
-  text-transform: none;
-  width: 95%;
-}
-
-/* CardProduct.js */
-.cardProductContainer {
-  margin-bottom: 50px;
-}
-
-.cardProductText {
-  text-align: center;
-}
-
-.cardProductInnerContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.cardProductCarousel {
-  width: 100%;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
-}
-
-.cardProductImage {
-  height: 550px;
-  transition: filter 0.3s ease, transform 0.3s ease;
-  object-fit: cover;
-}
-
-/* TimeSelection.js */
-.timeSelectionContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
-  margin: 25px;
-  padding: 3;
-  background-color: #f0f4f8;
-  border-radius: 12px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.timeSelectionTitle {
-  color: #007aff;
-  font-size: 20px;
-  font-family: sans-serif;
 }
 
 /* Feedback.js */
@@ -537,118 +410,76 @@
   }
 }
 
-/* AdminNotification.js */
-.adminNotificationContainer {
-  padding: 20px;
-  background-color: #f8f9fa;
-  border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  max-width: 800px;
-  margin: 20px auto;
-}
-
-.adminNotificationTitle {
-  font-size: 24px;
-  font-weight: bold;
-  color: #007aff;
-  text-align: center;
-  margin-bottom: 30px;
-}
-
-.contactItem {
-  padding: 20px;
-  margin-bottom: 20px;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.contactDetails {
-  display: flex;
-  flex-direction: column;
-  font-size: 16px;
-  color: #333;
-  max-width: 65%;
-}
-
-.contactDetail {
-  margin-bottom: 8px;
-}
-
-.addToCalendarButton {
-  padding: 10px 20px;
-  border-radius: 8px;
-  background-color: #007aff;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  font-size: 16px;
-  text-align: center;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  margin-left: 10px;
-}
-
-.addToCalendarButton:hover {
-  background-color: #005bb5;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.errorText {
-  color: #ff4d4f;
-  font-weight: bold;
-}
-
 /* collections */
 .carouselContainer {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 80vh;
-  background-color: #1a1a1a;
+  height: 50vh;
   position: relative;
+  overflow: hidden;
 }
 
 .rotatingCarousel {
   position: absolute;
-  width: 600px;
-  height: 600px;
-  animation: rotate 45s linear infinite;
+  width: 300px;
+  height: 300px;
 }
 
 .carouselItem {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%) rotate(calc(var(--i) * 45deg))
-    translate(220px);
+  transform: translate(-50%, -50%);
 }
 
 .carouselImage {
-  width: 120px;
-  height: 120px;
+  width: 75px;
+  height: 75px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid #fff;
-  transform: rotate(calc(-1 * var(--i) * 45deg));
 }
 
 .legend {
-  color: #fff;
-  font-size: 14px;
-  margin-top: 5px;
+  color: rgb(93, 136, 186);
+  font-size: 12px;
+  margin-top: 3px;
   text-align: center;
   font-weight: bold;
 }
 
-@keyframes rotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+/* collectionPage */
+.collectionContainer {
+  padding: 20px;
+  text-align: center;
+}
+
+.collectionTitle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 10px;
+}
+
+.galleryItem {
+  overflow: hidden;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.galleryItem:hover {
+  transform: scale(1.05);
+}
+
+.galleryImage {
+  width: 100%;
+  height: auto;
+  display: block;
 }

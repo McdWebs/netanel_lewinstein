@@ -19,6 +19,7 @@
     "add-to-calendar-button-react": "^2.7.2",
     "axios": "^1.7.2",
     "dayjs": "^1.11.13",
+    "gsap": "^3.12.5",
     "jotai": "^2.8.3",
     "mocha": "^10.5.2",
     "navigation-menu": "^1.0.0",
