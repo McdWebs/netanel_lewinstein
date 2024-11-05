@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@mui/material";
 
-import CarouselImages from "../helpers/CarouselImages";
+import HeroImages from "../helpers/HeroImages";
 import SocialNetworks from "../helpers/SocialNetworks";
 import AccessibilityMenu from "../helpers/AccessibilityMenu";
 // import FeedbackList from "./FeedbackList";
@@ -10,14 +10,14 @@ import Collections from "./Collections";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import styles from "../../styles/style.module.css";
-// import Contact from "./Contact";
+import Contact from "./Contact";
 
 const MainPage = () => {
   const navigate = useNavigate();
   return (
     <div>
       <AccessibilityMenu />
-      <CarouselImages />
+      <HeroImages />
       <Collections />
       <div className={styles.buttonContainer}>
         <Button
@@ -29,7 +29,7 @@ const MainPage = () => {
         </Button>
       </div>
       {/* <FeedbackList /> */}
-      {/* <Contact /> */} {/* waiting for twilio */}
+      <Contact />
       <SocialNetworks />
     </div>
   );

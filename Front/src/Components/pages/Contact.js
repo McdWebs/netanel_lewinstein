@@ -137,21 +137,21 @@ const Contact = () => {
 
     try {
       // Send WhatsApp message
-      const whatsappResponse = await fetch('/send-whatsapp', {
+      const whatsappResponse = await fetch('http://localhost:3005/send-whatsapp', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),
       });
 
       // Send email
-      const emailResponse = await fetch('/send-email', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(data),
-      });
+      // const emailResponse = await fetch('/send-email', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(data),
+      // });
 
       // Check for success response
-      if (whatsappResponse.ok && emailResponse.ok) {
+      if (whatsappResponse.ok) {
         setSuccessMessage("הבקשה נשלחה והמסרים נשלחו בהצלחה.");
         clearData();
       } else {

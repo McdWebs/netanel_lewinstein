@@ -40,17 +40,21 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const twilio = require("twilio");
-const nodemailer = require("nodemailer");
+const cors = require("cors");
+require("dotenv").config();
+// const nodemailer = require("nodemailer");
 
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3005;
 
-const twilioClient = twilio(
-  "YOUR_TWILIO_ACCOUNT_SID",
-  "YOUR_TWILIO_AUTH_TOKEN"
-);
+const twilioClient = twilio(process.env.Account_SID, process.env.Auth_Token);
 
 app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: "https://netanel-lewinstein.onrender.com",
+  })
+);
 
 app.post("/send-whatsapp", async (req, res) => {
   const { name, phone } = req.body;
@@ -58,8 +62,8 @@ app.post("/send-whatsapp", async (req, res) => {
 
   try {
     await twilioClient.messages.create({
-      from: "whatsapp:+YOUR_TWILIO_WHATSAPP_NUMBER",
-      to: `whatsapp:${phone}`, // The phone number must be in E.164 format
+      from: `whatsapp:${process.env.Twilio_phone_number}`,
+      to: `whatsapp:+972543644512`,
       body: whatsappMessage,
     });
     res.status(200).send("WhatsApp message sent successfully");
@@ -69,34 +73,34 @@ app.post("/send-whatsapp", async (req, res) => {
   }
 });
 
-const transporter = nodemailer.createTransport({
-  service: "gmail", // or any other email service
-  auth: {
-    user: "your-email@gmail.com",
-    pass: "your-email-password", // use environment variables in production
-  },
-});
+// const transporter = nodemailer.createTransport({
+//   service: "gmail", // or any other email service
+//   auth: {
+//     user: "your-email@gmail.com",
+//     pass: "your-email-password", // use environment variables in production
+//   },
+// });
 
-app.post("/send-email", (req, res) => {
-  const { name, phone } = req.body;
-  const emailSubject = "New Contact Request";
-  const emailBody = `Name: ${name}\nPhone: ${phone}`;
+// app.post("/send-email", (req, res) => {
+//   const { name, phone } = req.body;
+//   const emailSubject = "New Contact Request";
+//   const emailBody = `Name: ${name}\nPhone: ${phone}`;
 
-  const mailOptions = {
-    from: "your-email@gmail.com",
-    to: "recipient-email@example.com", // Change to recipient email
-    subject: emailSubject,
-    text: emailBody,
-  };
+//   const mailOptions = {
+//     from: "your-email@gmail.com",
+//     to: "recipient-email@example.com", // Change to recipient email
+//     subject: emailSubject,
+//     text: emailBody,
+//   };
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error("Error sending email:", error);
-      return res.status(500).send("Failed to send email");
-    }
-    res.status(200).send("Email sent successfully");
-  });
-});
+//   transporter.sendMail(mailOptions, (error, info) => {
+//     if (error) {
+//       console.error("Error sending email:", error);
+//       return res.status(500).send("Failed to send email");
+//     }
+//     res.status(200).send("Email sent successfully");
+//   });
+// });
 
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);

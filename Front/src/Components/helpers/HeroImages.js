@@ -7,13 +7,13 @@ import image2 from "../../assets/images/photo-1.jpg";
 import image3 from "../../assets/images/photo-2.jpeg";
 import image4 from "../../assets/images/photo-3.jpg";
 
-const CarouselImages = () => {
+const HeroImages = () => {
   return (
     <div className={styles.cardProductContainer}>
       <div className={styles.cardProductInnerContainer}>
         <div className={styles.cardProductCarousel}>
           <Carousel
-            showArrows={true}
+            showArrows={false}
             showThumbs={false}
             showStatus={false}
             infiniteLoop={true}
@@ -61,4 +61,4 @@ const itemData = [
   },
 ];
 
-export default CarouselImages;
+export default HeroImages;
