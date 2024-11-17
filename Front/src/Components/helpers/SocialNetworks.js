@@ -1,21 +1,10 @@
 import React from "react";
 import styles from "../../styles/style.module.css";
-import {
-  LocationOn,
-  Instagram,
-  LocalPhone,
-  WhatsApp,
-  Mail,
-} from "@mui/icons-material";
+import { Instagram, LocalPhone, WhatsApp, Mail } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 import { List, ListItem, ListItemIcon, ListItemText } from "@mui/material";
 
-const socialItems = [
-  {
-    icon: <LocationOn />,
-    link: "https://waze.com/ul/hsv8y882hk",
-    text: "Bnei Brak",
-  },
+export const socialItems = [
   {
     icon: <Instagram />,
     link: "https://www.instagram.com/myisraeliview?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==",
@@ -33,8 +22,8 @@ const socialItems = [
   },
   {
     icon: <Mail />,
-    link: "mailto:michaelhalperin2@gmail.com",
-    text: "michaelhalperin2@gmail.com",
+    link: "mailto:8005704@gmail.com",
+    text: "8005704@gmail.com",
   },
 ];
 
@@ -44,7 +33,9 @@ const SocialNetworks = () => {
       <List className={styles.iconContainer}>
         {socialItems.map((item, index) => (
           <ListItem className={styles.iconItem} key={index}>
-            <ListItemIcon sx={{ color: "rgb(93, 136, 186)" }}>{item.icon}</ListItemIcon>
+            <ListItemIcon sx={{ color: "rgb(93, 136, 186)" }}>
+              {item.icon}
+            </ListItemIcon>
             <ListItemText>
               <a href={item.link} className={styles.link}>
                 {item.text}

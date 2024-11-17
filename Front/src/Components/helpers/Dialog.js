@@ -1,7 +1,6 @@
 import * as React from "react";
 import Dialog from "@mui/material/Dialog";
 import DialogContent from "@mui/material/DialogContent";
-import DialogTitle from "@mui/material/DialogTitle";
 import Slide from "@mui/material/Slide";
 import styles from "../../styles/style.module.css";
 import IconButton from "@mui/material/IconButton";
@@ -45,7 +44,7 @@ const DialogForImage = ({ open, onClose, image }) => {
         <img
           src={image.image}
           alt={image.name}
-          className={styles.imageDialog}
+          className={styles.dialogImage}
         />
       </DialogContent>
     </Dialog>
