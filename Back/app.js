@@ -27,7 +27,7 @@ app.post("/send-whatsapp", async (req, res) => {
   try {
     await twilioClient.messages.create({
       from: `whatsapp:${process.env.Twilio_phone_number}`,
-      to: "whatsapp:+972543644512",
+      to: `whatsapp:${process.env.WHATSAPP_PHONE_NUMBER}`,
       body: whatsappMessage,
     });
 
