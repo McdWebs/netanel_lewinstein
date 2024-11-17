@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { gsap } from "gsap";
 import styles from "../../styles/style.module.css";
-import { IMAGELIST } from "../../consts/SubjectsList";
+import { IMAGE_LIST } from "../../consts/SubjectsList";
 
 const CarouselCollections = () => {
   const carouselRef = useRef(null);
@@ -49,13 +49,13 @@ const CarouselCollections = () => {
   return (
     <div className={styles.carouselContainer}>
       <div className={styles.rotatingCarousel} ref={carouselRef}>
-        {IMAGELIST.map((image) => (
+        {IMAGE_LIST.slice(0, 8).map((image) => (
           <div key={image.id} className={styles.carouselItem}>
             <img
               src={image.image}
               alt={`${image.label} Theme`}
               className={styles.carouselImage}
-              onClick={() => navigate(`/collections/${image.id}`)}
+              onClick={() => navigate(`/collections/${image.label}`)}
             />
             <p className={styles.legend}>{image.label}</p>
           </div>

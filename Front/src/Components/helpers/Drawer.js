@@ -10,14 +10,7 @@ import {
   ListItemText,
   ListItemIcon,
 } from "@mui/material";
-import {
-  ViewHeadline,
-  Home,
-  Work,
-  Info,
-  Phone,
-  Feedback,
-} from "@mui/icons-material";
+import { ViewHeadline, Home, Work, Info, Phone } from "@mui/icons-material";
 import { Link } from "react-router-dom";
 
 const DrawerNavBar = () => {
@@ -40,8 +33,7 @@ const DrawerNavBar = () => {
     { text: "בית", link: "/", icon: <Home /> },
     { text: "עבודות", link: "/works", icon: <Work /> },
     { text: "עלי", link: "/about", icon: <Info /> },
-    { text: "צרי קשר", link: "/contact", icon: <Phone /> },
-    { text: "לפרגן", link: "/feedback", icon: <Feedback /> },
+    { text: "יצירת קשר", link: "/contact", icon: <Phone /> },
   ];
 
   const list = (anchor) => (
@@ -55,7 +47,9 @@ const DrawerNavBar = () => {
         {menuItems.map((item) => (
           <ListItem key={item.text} disablePadding>
             <ListItemButton component={Link} to={item.link} duration={500}>
-              <ListItemIcon sx={{ color: "rgb(93, 136, 186)" }}>{item.icon}</ListItemIcon>
+              <ListItemIcon sx={{ color: "rgb(93, 136, 186)" }}>
+                {item.icon}
+              </ListItemIcon>
               <ListItemText primary={item.text} />
             </ListItemButton>
           </ListItem>
@@ -67,7 +61,10 @@ const DrawerNavBar = () => {
 
   return (
     <div>
-      <Button sx={{ color: "rgb(93, 136, 186)" }} onClick={toggleDrawer("right", true)}>
+      <Button
+        sx={{ color: "rgb(93, 136, 186)" }}
+        onClick={toggleDrawer("right", true)}
+      >
         <ViewHeadline />
       </Button>
       <Drawer

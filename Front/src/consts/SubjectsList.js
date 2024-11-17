@@ -1,72 +1,55 @@
-import image1 from "../assets/images/nail-1.jpg";
-import image2 from "../assets/images/nail-2.jpeg";
-import image3 from "../assets/images/nail-3.jpg";
-import image4 from "../assets/images/nail-4.jpg";
-import image5 from "../assets/images/nail-5.jpg";
-import image6 from "../assets/images/nail-6.jpg";
-import image7 from "../assets/images/nail-7.jpg";
-import image8 from "../assets/images/nail-8.jpg";
-// import image9 from "../assets/images/nail-9.jpg";
+const designImages = require.context(
+  "../assets/images/design",
+  false,
+  /\.(png|jpe?g|svg)$/
+);
+const circumcisionImages = require.context(
+  "../assets/images/circumcision",
+  false,
+  /\.(png|jpe?g|svg)$/
+);
+const barMitzvahImages = require.context(
+  "../assets/images/bar_mitzvah",
+  false,
+  /\.(png|jpe?g|svg)$/
+);
 
-export const IMAGELIST = [
-  {
-    id: 1,
-    label: "חתונות",
-    image: image1,
-  },
-  {
-    id: 2,
-    label: "אירוסין",
-    image: image2,
-  },
-  {
-    id: 3,
-    label: "בר מצווה",
-    image: image3,
-  },
-  {
-    id: 4,
+// const labelsArray = [
+//   "חתונות",
+//   "אירוסין",
+//   "בר מצווה",
+//   "ברית מילה",
+//   "פתיחת עסק",
+//   "אירועי צדקה",
+//   "הופעות",
+// ];
+
+const imageList = [
+  ...designImages.keys().map((image, index) => ({
+    id: index + 1,
+    label: "תפאורה",
+    image: designImages(image),
+    collection: "design",
+  })),
+  ...circumcisionImages.keys().map((image, index) => ({
+    id: designImages.keys().length + index + 1,
     label: "ברית מילה",
-    image: image4,
-  },
-  {
-    id: 5,
-    label: "פתיחת עסק",
-    image: image5,
-  },
-  {
-    id: 6,
-    label: "ימי הולדת",
-    image: image6,
-  },
-  {
-    id: 7,
-    label: "אירועי צדקה",
-    image: image7,
-  },
-  {
-    id: 8,
-    label: "הופעות",
-    image: image8,
-  },
-  // {
-  //   id: 9,
-  //   label: "צילומי אופנה",
-  //   image: image9,
-  // },
-  // {
-  //   id: 10,
-  //   label: "תפאורה",
-  //   image: image9,
-  // },
-  // {
-  //   id: 11,
-  //   label: "נופים",
-  //   image: image9,
-  // },
-  // {
-  //   id: 12,
-  //   label: "נופים",
-  //   image: image9,
-  // },
+    image: circumcisionImages(image),
+    collection: "circumcision",
+  })),
+  ...barMitzvahImages.keys().map((image, index) => ({
+    id: circumcisionImages.keys().length + index + 1,
+    label: "בר מצווה",
+    image: barMitzvahImages(image),
+    collection: "bar_mitzvah",
+  })),
 ];
+
+const collectionList = [
+  imageList.find((item) => item.collection === "design"),
+  imageList.find((item) => item.collection === "circumcision"),
+  imageList.find((item) => item.collection === "bar_mitzvah"),
+];
+
+export const IMAGE_LIST = imageList;
+export const COLLECTION_LIST = collectionList;

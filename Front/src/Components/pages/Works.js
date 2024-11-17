@@ -1,5 +1,5 @@
 import React from "react";
-import { IMAGELIST } from "../../consts/SubjectsList";
+import { COLLECTION_LIST } from "../../consts/SubjectsList";
 import styles from "../../styles/style.module.css";
 import { useNavigate } from "react-router-dom";
 
@@ -11,11 +11,11 @@ const Works = () => {
       <p className={styles.title}>גלריית התמונות</p>
       <div className={styles.workContainer}>
         <div className={styles.cardContainer}>
-          {IMAGELIST.map((image) => (
+          {COLLECTION_LIST.map((image) => (
             <div
               key={image.id}
               className={styles.card}
-              onClick={() => navigate(`/collections/${image.id}`)}
+              onClick={() => navigate(`/collections/${image.label}`)}
             >
               <div className={styles.imageContainer}>
                 <img

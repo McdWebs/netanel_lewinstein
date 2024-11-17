@@ -44,7 +44,7 @@ const DialogForImage = ({ open, onClose, image }) => {
         <img
           src={image.image}
           alt={image.name}
-          className={styles.imageDialog}
+          className={styles.dialogImage}
         />
       </DialogContent>
     </Dialog>

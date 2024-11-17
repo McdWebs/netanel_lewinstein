@@ -192,19 +192,23 @@
   text-align: right;
 }
 .sectionWrapper {
-  background-color: #f8f9fa;
+  position: relative;
+  background-image: url("../assets/images/protraits/protrait-1.jpg");
+  background-size: cover;
+  background-position: 75% 20%;
+  opacity: 75%;
+  height: 100%;
   padding: 40px;
   border-radius: 10px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   width: 80%;
   margin: 0 auto;
+  font-family: "Varela Round", sans-serif;
 }
 
 .titleAbout {
   font-family: "David Libre", serif;
   font-size: 36px;
   text-align: center;
-  color: #333;
   margin-bottom: 20px;
   text-transform: uppercase;
   letter-spacing: 2px;
@@ -215,8 +219,33 @@
   font-family: "Varela Round", sans-serif;
   font-size: 18px;
   line-height: 1.8;
-  color: #555;
   margin-bottom: 20px;
+}
+
+.overlay {
+  border-radius: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+.titleAbout,
+.hebrewText,
+.englishText {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* dialog.js  */
+.dialogImage {
+  width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Feedback.js */
@@ -418,6 +447,7 @@
   height: 50vh;
   position: relative;
   overflow: hidden;
+  margin-top: 15px;
 }
 
 .rotatingCarousel {
