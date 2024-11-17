@@ -5,13 +5,7 @@ const cors = require("cors");
 require("dotenv").config();
 
 const app = express();
-const port = process.env.PORT || 5000;
-
-app.use(
-  cors({
-    origin: "http://localhost:3000",
-  })
-);
+const port = process.env.PORT || 3005;
 
 const twilioClient = twilio(
   process.env.TWILIO_ACCOUNT_SID,
@@ -19,6 +13,11 @@ const twilioClient = twilio(
 );
 
 app.use(bodyParser.json());
+app.use(
+  cors({
+    origin: "https://netanel-lewinstein.onrender.com",
+  })
+);
 
 app.post("/send-whatsapp", async (req, res) => {
   const { name, phone } = req.body;

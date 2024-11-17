@@ -38,14 +38,12 @@ const Contact = () => {
     };
 
     try {
-      const whatsappResponse = await fetch(
-        "http://localhost:3005/send-whatsapp",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(data),
-        }
-      );
+      // Send WhatsApp message
+      const whatsappResponse = await fetch('https://netanel-lewinstein-back.onrender.com/send-whatsapp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
 
       // Send email
       // const emailResponse = await fetch('/send-email', {
