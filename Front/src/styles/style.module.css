@@ -491,25 +491,3 @@
   justify-content: space-between;
   width: 100%;
 }
-
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
-}
-
-.galleryItem {
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.galleryItem:hover {
-  transform: scale(1.05);
-}
-
-.galleryImage {
-  width: 100%;
-  height: auto;
-  display: block;
-}
