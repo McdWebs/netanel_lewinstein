@@ -440,43 +440,67 @@
 }
 
 /* collections */
-.carouselContainer {
+.carouselSection {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  gap: 2rem;
+  padding-top: 2rem;
+}
+
+.carouselBlock {
+  display: flex;
   align-items: center;
-  height: 50vh;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.curveRight .imageWrapper img {
+  border-radius: 50% 0 0 50%;
+}
+
+.curveLeft .imageWrapper img {
+  border-radius: 0 50% 50% 0;
+}
+
+.imageWrapper {
   position: relative;
-  overflow: hidden;
-  margin-top: 15px;
+  flex: 1;
 }
 
-.rotatingCarousel {
-  position: absolute;
-  width: 300px;
-  height: 300px;
-}
-
-.carouselItem {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.carouselImage {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
+.imageWrapper img {
+  width: 100%;
+  height: 350px;
   object-fit: cover;
-  border: 2px solid #fff;
 }
 
-.legend {
+.textWrapper {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.578);
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.textLeft {
+  bottom: 10px;
+  left: 10px;
+}
+
+.textRight {
+  bottom: 10px;
+  right: 10px;
+}
+
+.collectionTitle {
+  margin-bottom: 1rem;
   color: rgb(93, 136, 186);
-  font-size: 12px;
-  margin-top: 3px;
-  text-align: center;
-  font-weight: bold;
+}
+
+.carouselBlock:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.carouselBlock:nth-child(odd) {
+  flex-direction: row;
 }
 
 /* collectionPage */

@@ -51,5 +51,26 @@ const collectionList = [
   imageList.find((item) => item.collection === "bar_mitzvah"),
 ];
 
+// const carouselList = [
+//   imageList.filter((item) => item.collection === "design")[
+//     Math.floor(
+//       Math.random() *
+//         imageList.filter((item) => item.collection === "design").length
+//     )
+//   ],
+//   imageList.filter((item) => item.collection === "circumcision")[
+//     Math.floor(
+//       Math.random() *
+//         imageList.filter((item) => item.collection === "circumcision").length
+//     )
+//   ],
+//   imageList.filter((item) => item.collection === "bar_mitzvah")[
+//     Math.floor(
+//       Math.random() *
+//         imageList.filter((item) => item.collection === "bar_mitzvah").length
+//     )
+//   ],
+// ];
+
 export const IMAGE_LIST = imageList;
 export const COLLECTION_LIST = collectionList;
