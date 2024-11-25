@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import DrawerNavBAr from "./Drawer";
 // import logo from "../../assets/logo3.png";
 
+import styles from "../../styles/style.module.css"
+
 const NavBar = () => {
   return (
     <>
@@ -19,6 +21,7 @@ const NavBar = () => {
           padding: "10px 0",
           boxShadow: "0px 2px 4px rgba(0, 0, 0, 0.1)",
         }}
+        className={styles.pageBackground}
       >
         <Link
           to="/"

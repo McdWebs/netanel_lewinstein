@@ -6,7 +6,7 @@ const Description = () => {
   return (
     <div>
         <h4 className={styles.descriptionTitle}>הצלם לאירוע שלך</h4>
-        <img src={image} className={styles.descriptionImage} />
+        <img src={image} alt='icon' className={styles.descriptionImage} />
     </div>
   )
 }
