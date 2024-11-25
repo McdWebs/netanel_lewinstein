@@ -440,18 +440,9 @@
 }
 
 /* collections */
-.carouselSection {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-  padding-top: 2rem;
-}
-
 .carouselBlock {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
+  padding-top: 3rem;
 }
 
 .curveRight .imageWrapper img {
@@ -462,21 +453,27 @@
   border-radius: 0 50% 50% 0;
 }
 
+.placeholder {
+  flex: 1;
+}
+
+.carousleWrapper{
+  flex: 3;
+}
+
 .imageWrapper {
   position: relative;
-  flex: 1;
+  flex: 2;
 }
 
 .imageWrapper img {
   width: 100%;
-  height: 350px;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .textWrapper {
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.578);
-  padding: 5px;
+  background-color: rgba(0, 0, 0, 0.329);
   border-radius: 5px;
 }
 
@@ -493,14 +490,11 @@
 .collectionTitle {
   margin-bottom: 1rem;
   color: rgb(93, 136, 186);
+  /* color: rgba(255, 255, 255, 0.74); */
 }
 
 .carouselBlock:nth-child(even) {
   flex-direction: row-reverse;
-}
-
-.carouselBlock:nth-child(odd) {
-  flex-direction: row;
 }
 
 /* collectionPage */
@@ -514,4 +508,19 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
+}
+
+/* description.js */
+.descriptionTitle {
+  font-family: "David Libre", serif;
+  font-size: 24px;
+  text-align: center;
+  color: rgb(93, 136, 186);
+}
+
+.descriptionImage {
+  display: block;
+  margin: 10px auto;
+  width: 35%;
+  height: auto;
 }

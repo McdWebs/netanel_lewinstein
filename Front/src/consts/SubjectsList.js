@@ -47,30 +47,20 @@ const imageList = [
 
 const collectionList = [
   imageList.find((item) => item.collection === "design"),
-  imageList.find((item) => item.collection === "circumcision"),
-  imageList.find((item) => item.collection === "bar_mitzvah"),
+  imageList.find(
+    (item) => item.collection === "circumcision" && item.id === 30
+  ), // hard coded id for better resolution
+  imageList.find(
+    (item) => item.collection === "bar_mitzvah" && item.id === 105
+  ), // hard coded id for better resolution
 ];
 
-// const carouselList = [
-//   imageList.filter((item) => item.collection === "design")[
-//     Math.floor(
-//       Math.random() *
-//         imageList.filter((item) => item.collection === "design").length
-//     )
-//   ],
-//   imageList.filter((item) => item.collection === "circumcision")[
-//     Math.floor(
-//       Math.random() *
-//         imageList.filter((item) => item.collection === "circumcision").length
-//     )
-//   ],
-//   imageList.filter((item) => item.collection === "bar_mitzvah")[
-//     Math.floor(
-//       Math.random() *
-//         imageList.filter((item) => item.collection === "bar_mitzvah").length
-//     )
-//   ],
-// ];
+const carouselList = [
+  imageList.find((item) => item.collection === "design"),
+  imageList.find((item) => item.collection === "circumcision" && item.id === 38),
+  imageList.find((item) => item.collection === "bar_mitzvah" && item.id === 92),
+];
 
 export const IMAGE_LIST = imageList;
 export const COLLECTION_LIST = collectionList;
+export const CAROUSEL_LIST = carouselList;
