@@ -13,7 +13,7 @@ const HeroImages = () => {
       showStatus={false}
       infiniteLoop={true}
       autoPlay={true}
-      interval={3000}
+      interval={5000}
       transitionTime={500}
     >
       {itemData.map((item, index) => (

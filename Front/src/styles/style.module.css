@@ -5,11 +5,17 @@
   font-style: normal;
 }
 
-/* mainpage.js */
+/* home.js */
 .buttonContainer {
   display: flex;
   justify-content: center;
   margin: 20px 0;
+}
+
+.pageBackground {
+  background: linear-gradient(135deg, #f3f9ff, #d9e9f9);
+  z-index: 0;
+  position: relative;
 }
 
 /* works.js */
@@ -254,7 +260,7 @@
   flex-direction: column;
   align-items: center;
   padding: 40px;
-  background-color: #f8f9fa;
+  background-color: #f8f9fa83;
   border-radius: 10px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   max-width: 600px;
@@ -440,43 +446,62 @@
 }
 
 /* collections */
-.carouselContainer {
+.carouselBlock {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 50vh;
+  padding-top: 3rem;
+}
+
+.curveRight .imageWrapper img {
+  border-radius: 50% 0 0 50%;
+}
+
+.curveLeft .imageWrapper img {
+  border-radius: 0 50% 50% 0;
+}
+
+.placeholder {
+  flex: 1;
+}
+
+.carousleWrapper {
+  flex: 3;
+}
+
+.imageWrapper {
   position: relative;
-  overflow: hidden;
-  margin-top: 15px;
+  flex: 2;
 }
 
-.rotatingCarousel {
+.imageWrapper img {
+  width: 100%;
+  object-fit: contain;
+  z-index: 2;
+}
+
+.textWrapper {
   position: absolute;
-  width: 300px;
-  height: 300px;
+  background-color: rgba(0, 0, 0, 0.329);
+  border-radius: 5px;
 }
 
-.carouselItem {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.textLeft {
+  bottom: 10px;
+  left: 10px;
 }
 
-.carouselImage {
-  width: 75px;
-  height: 75px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 2px solid #fff;
+.textRight {
+  bottom: 10px;
+  right: 10px;
 }
 
-.legend {
+.collectionTitle {
+  margin-bottom: 1rem;
   color: rgb(93, 136, 186);
-  font-size: 12px;
-  margin-top: 3px;
-  text-align: center;
-  font-weight: bold;
+  /* color: rgba(255, 255, 255, 0.74); */
+}
+
+.carouselBlock:nth-child(even) {
+  flex-direction: row-reverse;
 }
 
 /* collectionPage */
@@ -492,24 +517,23 @@
   width: 100%;
 }
 
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  gap: 10px;
+/* description.js */
+.descriptionTitle {
+  font-family: "David Libre", serif;
+  font-size: 24px;
+  text-align: center;
+  color: rgb(93, 136, 186);
 }
 
-.galleryItem {
-  overflow: hidden;
-  border-radius: 8px;
-  transition: transform 0.3s ease;
-}
-
-.galleryItem:hover {
-  transform: scale(1.05);
-}
-
-.galleryImage {
-  width: 100%;
-  height: auto;
+.descriptionImage {
   display: block;
+  margin: 10px auto;
+  width: 35%;
+  height: auto;
+}
+
+@media (min-width: 1024px) {
+  .descriptionImage {
+    width: 10%;
+  }
 }

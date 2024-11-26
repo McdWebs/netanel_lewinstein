@@ -1,66 +1,61 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import { useNavigate } from "react-router-dom";
-import { gsap } from "gsap";
+
 import styles from "../../styles/style.module.css";
-import { IMAGE_LIST } from "../../consts/SubjectsList";
+import { COLLECTION_LIST, CAROUSEL_LIST } from "../../consts/SubjectsList";
+
+import { Carousel } from "react-responsive-carousel";
 
 const CarouselCollections = () => {
-  const carouselRef = useRef(null);
   const navigate = useNavigate();
 
-  useEffect(() => {
-    const items = carouselRef.current.children;
-    const totalItems = items.length;
-    const angle = 360 / totalItems;
-    const radius = 140;
-
-    Array.from(items).forEach((item, index) => {
-      const rotation = angle * index;
-      const x = radius * Math.cos((rotation * Math.PI) / 180);
-      const y = radius * Math.sin((rotation * Math.PI) / 180);
-
-      gsap.set(item, {
-        x,
-        y,
-        rotation: -rotation,
-      });
-    });
-
-    const tl = gsap.timeline({ repeat: -1, defaults: { ease: "none" } });
-
-    tl.to(carouselRef.current, {
-      rotation: 360,
-      duration: 30,
-      onUpdate: () => {
-        Array.from(items).forEach((item, index) => {
-          const currentRotation = gsap.getProperty(
-            carouselRef.current,
-            "rotation"
-          );
-          const itemRotation = currentRotation - angle * index;
-          gsap.set(item, { rotation: -itemRotation });
-          const legend = item.children[1];
-          gsap.set(legend, { rotation: 0 });
-        });
-      },
-    });
-  }, [carouselRef]);
-
   return (
-    <div className={styles.carouselContainer}>
-      <div className={styles.rotatingCarousel} ref={carouselRef}>
-        {IMAGE_LIST.slice(0, 8).map((image) => (
-          <div key={image.id} className={styles.carouselItem}>
-            <img
-              src={image.image}
-              alt={`${image.label} Theme`}
-              className={styles.carouselImage}
-              onClick={() => navigate(`/collections/${image.label}`)}
-            />
-            <p className={styles.legend}>{image.label}</p>
-          </div>
-        ))}
-      </div>
+    <div>
+      {COLLECTION_LIST.slice(0, 3).map((image, index) => (
+        <div
+          key={index}
+          className={`${styles.carouselBlock} ${
+            index % 2 === 0 ? styles.curveRight : styles.curveLeft
+          }`}
+        >
+          <div className={styles.placeholder}></div>
+          {index === 0 ? (
+            <Carousel
+              showArrows={false}
+              showThumbs={false}
+              showStatus={false}
+              // infiniteLoop={true}
+              autoPlay={true}
+              transitionTime={1000}
+              animationHandler={"fade"}
+              className={styles.imageWrapper}
+            >
+              {CAROUSEL_LIST.map((item, index) => (
+                <img key={index} src={item.image} alt={item.label} />
+              ))}
+            </Carousel>
+          ) : (
+            <>
+              <div className={styles.imageWrapper}>
+                <img
+                  src={image.image}
+                  alt={`${image.label} Theme`}
+                  onClick={() => {
+                    navigate(`/collections/${image.label}`);
+                  }}
+                />
+                <div
+                  className={`${styles.textWrapper} ${
+                    index % 2 === 0 ? styles.textRight : styles.textLeft
+                  }`}
+                >
+                  <h2 className={styles.collectionTitle}>{image.label}</h2>
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      ))}
     </div>
   );
 };

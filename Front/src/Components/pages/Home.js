@@ -8,13 +8,16 @@ import CarouselCollections from "./CarouselCollections";
 import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 
 import styles from "../../styles/style.module.css";
+
 import Contact from "./Contact";
+import Description from "../helpers/Description";
 
 const Home = () => {
   const navigate = useNavigate();
   return (
-    <div>
+    <div className={styles.pageBackground}>
       <HeroImages />
+      <Description />
       <CarouselCollections />
       <div className={styles.buttonContainer}>
         <Button

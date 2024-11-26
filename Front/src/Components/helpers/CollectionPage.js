@@ -1,12 +1,11 @@
 import React, { useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { IMAGE_LIST } from "../../consts/SubjectsList";
-import styles from "../../styles/style.module.css";
-import DialogForImage from "./Dialog";
-import { Button } from "@mui/material";
+import { Button, ImageList, ImageListItem } from "@mui/material";
 import { ArrowBack } from "@mui/icons-material";
-import ImageList from "@mui/material/ImageList";
-import ImageListItem from "@mui/material/ImageListItem";
+
+import { IMAGE_LIST } from "../../consts/SubjectsList";
+import DialogForImage from "./Dialog";
+import styles from "../../styles/style.module.css";
 
 // function srcset(image, size, rows = 1, cols = 1) {
 //   return {
@@ -28,7 +27,9 @@ const CollectionPage = () => {
   }
 
   // Filter images based on the collection label
-  const filteredImages = IMAGE_LIST.filter((image) => image.label === collection.label);
+  const filteredImages = IMAGE_LIST.filter(
+    (image) => image.label === collection.label
+  );
 
   const handleOpenDialog = (image) => {
     setSelectedImages(image);
@@ -48,16 +49,16 @@ const CollectionPage = () => {
         ></Button>
         {collection.label}
       </h1>
-      <ImageList sx={{ width: "100%", height: "100%" }} variant="quilted" cols={3} rowHeight={121}>
+
+      {/* Gallery for the images */}
+      <ImageList variant="masonry" cols={2} gap={5}>
         {filteredImages.map((image, index) => (
-          <ImageListItem key={index} cols={collection.cols} rows={collection.rows}>
+          <ImageListItem key={index} onClick={() => handleOpenDialog(image)}>
             <img
-              // {...srcset(image.image, 121)}
-              src={image.image}
-              alt={image.name}
-              className={styles.galleryImage}
+              src={`${image.image}?w=248&fit=crop&auto=format`}
+              srcSet={`${image.image}?w=248&fit=crop&auto=format&dpr=2 2x`}
+              alt={image.label}
               loading="lazy"
-              onClick={() => handleOpenDialog(image)}
             />
           </ImageListItem>
         ))}
